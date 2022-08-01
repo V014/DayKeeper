@@ -1,0 +1,17 @@
+// check cashflow on month
+SQLiteConnection con = Connection.GetConnection();
+SQLiteCommand cmd = new SQLiteCommand("SELECT CAST(Sales AS INT) FROM Records WHERE Date LIKE '%" + _month + "%'", con);
+SQLiteDataReader reader = cmd.ExecuteReader();
+SQLiteCommand getExpenditure = new SQLiteCommand("SELECT CAST(Losses AS INT) FROM Records WHERE Date LIKE '%" + _month + "%'", con);
+SQLiteDataReader expenditure = getExpenditure.ExecuteReader();
+
+// check sales
+txt_profit.Text = cash.checkSales(_month, year);
+string sales = cash.checkSales(_month, year);
+
+// check losses
+txt_loss.Text = cash.checklosses(_month, year);
+string bills =cash.checklosses(_month, year);
+
+//check days worked
+txt_daysWorked.Text = cash.checkDaysworked(_month, year);
