@@ -36,3 +36,22 @@ C:\Users\wanga.HP-BZK\Documents\Visual Studio 2015\Projects\DayKeeper\DayKeeper\
 C:\Users\wanga.HP-BZK\Documents\Visual Studio 2015\Projects\DayKeeper\DayKeeper\obj\Debug\DayKeeper.Welcome.resources
 C:\Users\wanga.HP-BZK\Documents\Visual Studio 2015\Projects\DayKeeper\DayKeeper\obj\Debug\DayKeeper.csproj.GenerateResource.Cache
 C:\Users\wanga.HP-BZK\Documents\Visual Studio 2015\Projects\DayKeeper\DayKeeper\obj\Debug\DayKeeper.exe.licenses
+C:\Users\Wanga Kanjala\source\repos\DayKeeper\DayKeeper\obj\Debug\DayKeeper.csprojAssemblyReference.cache
+C:\Users\Wanga Kanjala\source\repos\DayKeeper\DayKeeper\obj\Debug\DayKeeper.Cashflow.resources
+C:\Users\Wanga Kanjala\source\repos\DayKeeper\DayKeeper\obj\Debug\DayKeeper.Home.resources
+C:\Users\Wanga Kanjala\source\repos\DayKeeper\DayKeeper\obj\Debug\DayKeeper.Insert.resources
+C:\Users\Wanga Kanjala\source\repos\DayKeeper\DayKeeper\obj\Debug\DayKeeper.Properties.Resources.resources
+C:\Users\Wanga Kanjala\source\repos\DayKeeper\DayKeeper\obj\Debug\DayKeeper.Records.resources
+C:\Users\Wanga Kanjala\source\repos\DayKeeper\DayKeeper\obj\Debug\DayKeeper.Strategy.resources
+C:\Users\Wanga Kanjala\source\repos\DayKeeper\DayKeeper\obj\Debug\DayKeeper.Welcome.resources
+C:\Users\Wanga Kanjala\source\repos\DayKeeper\DayKeeper\obj\Debug\DayKeeper.csproj.GenerateResource.cache
+C:\Users\Wanga Kanjala\source\repos\DayKeeper\DayKeeper\obj\Debug\DayKeeper.exe.licenses
+C:\Users\Wanga Kanjala\source\repos\DayKeeper\DayKeeper\obj\Debug\DayKeeper.exe
+C:\Users\Wanga Kanjala\source\repos\DayKeeper\DayKeeper\obj\Debug\DayKeeper.pdb
+C:\Users\Wanga Kanjala\source\repos\DayKeeper\DayKeeper\bin\Debug\DayKeeper.exe.config
+C:\Users\Wanga Kanjala\source\repos\DayKeeper\DayKeeper\bin\Debug\DayKeeper.exe
+C:\Users\Wanga Kanjala\source\repos\DayKeeper\DayKeeper\bin\Debug\DayKeeper.pdb
+C:\Users\Wanga Kanjala\source\repos\DayKeeper\DayKeeper\bin\Debug\Bunifu.UI.WinForms.BunifuCircleProgress.xml
+C:\Users\Wanga Kanjala\source\repos\DayKeeper\DayKeeper\bin\Debug\Bunifu.UI.WinForms.BunifuDatePicker.xml
+C:\Users\Wanga Kanjala\source\repos\DayKeeper\DayKeeper\obj\Debug\DayKeeper.csproj.CoreCompileInputs.cache
+C:\Users\Wanga Kanjala\source\repos\DayKeeper\DayKeeper\obj\Debug\DayKeeper.csproj.CopyComplete
