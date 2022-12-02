@@ -5,9 +5,14 @@ namespace DayKeeper
 {
     public partial class Records : UserControl
     {
+        Connection con = new Connection();
+        StyleDataGrid grid = new StyleDataGrid();
         public Records()
         {
             InitializeComponent();
+            con.LoadData("SELECT * FROM Records", data_records);
+            data_records.Columns[0].Visible = false;
+            grid.style(data_records);
         }
 
         private void delete_btn_Click(object sender, EventArgs e)
@@ -18,11 +23,11 @@ namespace DayKeeper
                 try
                 {
                     Home home = new Home();
-                    int id = Convert.ToInt32(dataGrid.CurrentRow.Cells[0].Value.ToString()); // collect id from selected row
+                    int id = Convert.ToInt32(data_records.CurrentRow.Cells[0].Value.ToString()); // collect id from selected row
                     string queryDelete = "DELETE FROM Records WHERE Id = '" + id + "'";
                     Connection.ExecuteQuery(queryDelete);
                     string queryRecords = "SELECT * FROM Records";
-                    home.LoadData(queryRecords, dataGrid);
+                    home.LoadData(queryRecords, data_records);
 
                 }
                 catch (Exception)
@@ -36,6 +41,11 @@ namespace DayKeeper
         {
             Insert insert = new Insert();
             insert.Show();
+        }
+
+        private void Txt_mileage_Click(object sender, EventArgs e)
+        {
+            txt_mileage.Text = "";
         }
     }
 }

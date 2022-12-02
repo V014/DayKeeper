@@ -16,17 +16,13 @@ namespace DayKeeper
             InitializeComponent();
             loadHome();
             string date = DateTime.Now.ToString("f");
-            string cmd = "UPDATE Session SET Date = '" + date + "' WHERE id = 1";
-            Connection.ExecuteQuery(cmd);
-            lbl_lastentry.Text = date;
-            // SoundPlayer load = new SoundPlayer(@"tap.wav");
-            // load.Play();
+            Connection.ExecuteQuery("UPDATE Session SET Date = '" + date + "' WHERE id = 1");
         }
         void loadHome()
         {
-            this.mainPanel.Controls.Clear();
+            this.panel_main.Controls.Clear();
             Welcome welcome = new Welcome();
-            this.mainPanel.Controls.Add(welcome);
+            this.panel_main.Controls.Add(welcome);
             welcome.Dock = DockStyle.Fill;
             welcome.AutoSize = true;
             welcome.Show();
@@ -50,15 +46,11 @@ namespace DayKeeper
         // call user control on click
         private void records_btn_Click(object sender, EventArgs e)
         {
-            this.mainPanel.Controls.Clear();
+            this.panel_main.Controls.Clear();
             Records records = new Records();
-            this.mainPanel.Controls.Add(records);
+            this.panel_main.Controls.Add(records);
             records.Dock = DockStyle.Fill;
             records.Show();
-            string queryRecords = "SELECT * FROM Records";
-            LoadData(queryRecords, records.dataGrid);
-            records.dataGrid.Columns[0].Visible = false;
-            styleDarkDataGridView(records.dataGrid);
         }
         // styling of the datagrid
         void styleDarkDataGridView(DataGridView dataGrid)
@@ -90,122 +82,19 @@ namespace DayKeeper
         }
         public void cashflow_btn_Click(object sender, EventArgs e)
         {
-            this.mainPanel.Controls.Clear();
+            this.panel_main.Controls.Clear();
             Cashflow chart = new Cashflow();
             chart.Dock = DockStyle.Fill;
-            this.mainPanel.Controls.Add(chart);
+            this.panel_main.Controls.Add(chart);
             chart.Show();
         }
         private void strategy_btn_Click(object sender, EventArgs e)
         {
-            this.mainPanel.Controls.Clear();
+            this.panel_main.Controls.Clear();
             Strategy strategy = new Strategy();
             strategy.Dock = DockStyle.Fill;
-            this.mainPanel.Controls.Add(strategy);
+            this.panel_main.Controls.Add(strategy);
             strategy.Show();
-        }
- 
-        private void Home_SizeChanged(object sender, EventArgs e)
-        {
-            if (this.Width < 900)
-            {
-                panel_nav.Width = 40;
-                // menu
-                btn_menu.Width = 35;
-                btn_menu.Text = "";
-                // home
-                btn_home.Width = 35;
-                btn_home.Text = "";
-                // records
-                btn_records.Width = 35;
-                btn_records.Text = "";
-                // cashflow
-                btn_cashflow.Width = 35;
-                btn_cashflow.Text = "";
-                // strategy
-                btn_strategy.Width = 35;
-                btn_strategy.Text = "";
-                // panel
-                panel_user.Hide();
-                btn_manager.Show();
-            }
-            else
-            {
-                panel_nav.Width = 200;
-                // menu
-                btn_menu.Width = 200;
-                btn_menu.Text = "Menu";
-                // home
-                btn_home.Width = 200;
-                btn_home.Text = "Home";
-                // records
-                btn_records.Width = 200;
-                btn_records.Text = "Records";
-                // cashflow
-                btn_cashflow.Width = 200;
-                btn_cashflow.Text = "Cashflow";
-                // strategy
-                btn_strategy.Width = 200;
-                btn_strategy.Text = "Strategy";
-                // panel
-                panel_user.Show();
-                btn_manager.Hide();
-            }
-        }
-
-        private void btn_menu_Click(object sender, EventArgs e)
-        {
-            if (panel_nav.Width == 200)
-            {
-                panel_nav.Width = 40;
-                // menu
-                btn_menu.Width = 35;
-                btn_menu.Text = "";
-                // home
-                btn_home.Width = 35;
-                btn_home.Text = "";
-                // records
-                btn_records.Width = 35;
-                btn_records.Text = "";
-                // cashflow
-                btn_cashflow.Width = 35;
-                btn_cashflow.Text = "";
-                // strategy
-                btn_strategy.Width = 35;
-                btn_strategy.Text = "";
-                // panel
-                panel_user.Hide();
-                btn_manager.Width = 35;
-                btn_manager.Text = "";
-                btn_manager.Show();
-            }
-            else
-            {
-                panel_nav.Width = 200;
-                // menu
-                btn_menu.Width = 200;
-                btn_menu.Text = "Menu";
-                // home
-                btn_home.Width = 200;
-                btn_home.Text = "Home";
-                // records
-                btn_records.Width = 200;
-                btn_records.Text = "Records";
-                // cashflow
-                btn_cashflow.Width = 200;
-                btn_cashflow.Text = "Cashflow";
-                // strategy
-                btn_strategy.Width = 200;
-                btn_strategy.Text = "Strategy";
-                // panel
-                panel_user.Show();
-                btn_manager.Hide();
-            }
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-            
         }
     }
 }

@@ -32,8 +32,6 @@
             this.welcome_sub = new System.Windows.Forms.Label();
             this.welcome_lbl = new System.Windows.Forms.Label();
             this.panel_header = new System.Windows.Forms.Panel();
-            this.pictureBox8 = new System.Windows.Forms.PictureBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.pnl_features = new System.Windows.Forms.FlowLayoutPanel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.lbl_profit = new System.Windows.Forms.Label();
@@ -64,7 +62,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.panel_header.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             this.pnl_features.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -90,9 +87,9 @@
             this.welcome_sub.BackColor = System.Drawing.Color.Transparent;
             this.welcome_sub.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.welcome_sub.ForeColor = System.Drawing.Color.Gray;
-            this.welcome_sub.Location = new System.Drawing.Point(27, 77);
+            this.welcome_sub.Location = new System.Drawing.Point(13, 60);
             this.welcome_sub.Name = "welcome_sub";
-            this.welcome_sub.Size = new System.Drawing.Size(453, 45);
+            this.welcome_sub.Size = new System.Drawing.Size(312, 60);
             this.welcome_sub.TabIndex = 0;
             this.welcome_sub.Text = resources.GetString("welcome_sub.Text");
             // 
@@ -100,9 +97,9 @@
             // 
             this.welcome_lbl.AutoSize = true;
             this.welcome_lbl.BackColor = System.Drawing.Color.Transparent;
-            this.welcome_lbl.Font = new System.Drawing.Font("Impact", 36F, System.Drawing.FontStyle.Italic);
+            this.welcome_lbl.Font = new System.Drawing.Font("Impact", 36F);
             this.welcome_lbl.ForeColor = System.Drawing.Color.PaleGreen;
-            this.welcome_lbl.Location = new System.Drawing.Point(20, 17);
+            this.welcome_lbl.Location = new System.Drawing.Point(3, 0);
             this.welcome_lbl.Name = "welcome_lbl";
             this.welcome_lbl.Size = new System.Drawing.Size(321, 60);
             this.welcome_lbl.TabIndex = 0;
@@ -111,37 +108,13 @@
             // panel_header
             // 
             this.panel_header.BackColor = System.Drawing.Color.Transparent;
-            this.panel_header.Controls.Add(this.pictureBox8);
-            this.panel_header.Controls.Add(this.textBox1);
             this.panel_header.Controls.Add(this.welcome_sub);
             this.panel_header.Controls.Add(this.welcome_lbl);
             this.panel_header.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel_header.Location = new System.Drawing.Point(0, 0);
             this.panel_header.Name = "panel_header";
-            this.panel_header.Size = new System.Drawing.Size(961, 167);
+            this.panel_header.Size = new System.Drawing.Size(961, 134);
             this.panel_header.TabIndex = 12;
-            // 
-            // pictureBox8
-            // 
-            this.pictureBox8.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox8.Image")));
-            this.pictureBox8.Location = new System.Drawing.Point(30, 137);
-            this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(29, 24);
-            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox8.TabIndex = 1;
-            this.pictureBox8.TabStop = false;
-            // 
-            // textBox1
-            // 
-            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.textBox1.ForeColor = System.Drawing.Color.White;
-            this.textBox1.Location = new System.Drawing.Point(64, 137);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(207, 24);
-            this.textBox1.TabIndex = 0;
-            this.textBox1.Text = "Search...";
             // 
             // pnl_features
             // 
@@ -157,10 +130,10 @@
             this.pnl_features.Controls.Add(this.panel4);
             this.pnl_features.Controls.Add(this.panel6);
             this.pnl_features.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnl_features.Location = new System.Drawing.Point(0, 167);
+            this.pnl_features.Location = new System.Drawing.Point(0, 134);
             this.pnl_features.Margin = new System.Windows.Forms.Padding(3, 3, 3, 10);
             this.pnl_features.Name = "pnl_features";
-            this.pnl_features.Size = new System.Drawing.Size(961, 354);
+            this.pnl_features.Size = new System.Drawing.Size(961, 387);
             this.pnl_features.TabIndex = 13;
             // 
             // panel5
@@ -482,7 +455,6 @@
             this.Size = new System.Drawing.Size(961, 521);
             this.panel_header.ResumeLayout(false);
             this.panel_header.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             this.pnl_features.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
@@ -518,7 +490,6 @@
         private System.Windows.Forms.Label welcome_lbl;
         private System.Windows.Forms.Panel panel_header;
         private System.Windows.Forms.FlowLayoutPanel pnl_features;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.PictureBox pictureBox7;
@@ -547,6 +518,5 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.PictureBox pictureBox8;
     }
 }

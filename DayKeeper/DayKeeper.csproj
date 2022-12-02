@@ -96,6 +96,7 @@
     <Compile Include="Strategy.Designer.cs">
       <DependentUpon>Strategy.cs</DependentUpon>
     </Compile>
+    <Compile Include="StyleDataGrid.cs" />
     <Compile Include="Welcome.cs">
       <SubType>UserControl</SubType>
     </Compile>

@@ -1,6 +1,6 @@
 ﻿using System.Data;
 using System.Data.SQLite;
-
+using System.Windows.Forms;
 
 namespace DayKeeper
 {
@@ -9,8 +9,6 @@ namespace DayKeeper
         // declare connection variables
         private static SQLiteConnection con;
         private static SQLiteCommand cmd;
-        private static DataSet DS = new DataSet();
-        private static DataTable DT = new DataTable();
 
         // connection to database file
         private static void setConnection()
@@ -44,6 +42,18 @@ namespace DayKeeper
                 object result = cmd.ExecuteScalar();
                 return (result == null ? "" : result.ToString());
             }
+        }
+        // pulls data from a table and fills it into a specified datagrid
+        public void LoadData(string query, DataGridView dataGrid)
+        {
+            var conn = GetConnection();
+            var DB = new SQLiteDataAdapter(query, con);
+            var DS = new DataSet();
+            var DT = new DataTable();
+            DB.Fill(DS);
+            DT = DS.Tables[0];
+            dataGrid.DataSource = DT;
+            con.Close();
         }
     }
 }

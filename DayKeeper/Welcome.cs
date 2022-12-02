@@ -18,8 +18,7 @@ namespace DayKeeper
         public Welcome()
         {
             InitializeComponent();
-            lbl_profit.Text = sales.checkSales(month, year);
-            lbl_expendeture.Text = losses.checklosses(month, year);
+            
         }
     }
 }
