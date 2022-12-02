@@ -11,12 +11,13 @@ namespace DayKeeper
     {
         // program starts, when the first windows (Home) loads,
         // it updates the session date to current (month/day/year - 1/1/2022) format
+        Connection con = new Connection();
         public Home()
         {
             InitializeComponent();
             loadHome();
             string date = DateTime.Now.ToString("f");
-            Connection.ExecuteQuery("UPDATE Session SET Date = '" + date + "' WHERE id = 1");
+            con.ExecuteQuery("UPDATE Session SET Date = '" + date + "' WHERE id = 1");
         }
         void loadHome()
         {
@@ -51,34 +52,6 @@ namespace DayKeeper
             this.panel_main.Controls.Add(records);
             records.Dock = DockStyle.Fill;
             records.Show();
-        }
-        // styling of the datagrid
-        void styleDarkDataGridView(DataGridView dataGrid)
-        {
-            dataGrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dataGrid.BorderStyle = BorderStyle.None;
-            dataGrid.EnableHeadersVisualStyles = false;
-            dataGrid.CellBorderStyle = DataGridViewCellBorderStyle.None;
-            dataGrid.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGrid.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGrid.RowHeadersWidth = 30;
-
-            dataGrid.BackgroundColor = Color.FromArgb(37, 37, 39);
-            dataGrid.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(34, 34, 34);
-            dataGrid.AlternatingRowsDefaultCellStyle.ForeColor = Color.White;
-
-            dataGrid.RowsDefaultCellStyle.BackColor = Color.FromArgb(34, 34, 34);
-            dataGrid.RowsDefaultCellStyle.ForeColor = Color.White;
-            dataGrid.RowHeadersDefaultCellStyle.BackColor = Color.FromArgb(34, 34, 34);
-
-            dataGrid.DefaultCellStyle.SelectionForeColor = Color.WhiteSmoke;
-            dataGrid.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(34, 34, 34);
-            dataGrid.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
-
-            dataGrid.DefaultCellStyle.Font = new Font("Roboto", 9);
-            dataGrid.ColumnHeadersDefaultCellStyle.Font = new Font("Roboto", 9);
-            dataGrid.AlternatingRowsDefaultCellStyle.Font = new Font("Roboto", 9);
-
         }
         public void cashflow_btn_Click(object sender, EventArgs e)
         {

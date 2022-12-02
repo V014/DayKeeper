@@ -13,7 +13,7 @@ namespace DayKeeper
         private static int monthNumber = DateTime.Now.Month;
         private static int year = DateTime.Now.Year;
         string month = getMonth.currentMonth(monthNumber);
-
+        Connection con = new Connection();
         public Cashflow()
         {
             InitializeComponent();
@@ -98,7 +98,7 @@ namespace DayKeeper
             int _year = Convert.ToInt32(cur_year);
             // check breakdown
             string checkbreakdowns = "SELECT count(Crew) FROM Records WHERE Date LIKE '%" + _month + "%' AND Date LIKE '%" + _year + "%' AND Crew LIKE '%Breakdown%'";
-            string breakdowns = Connection.ReadString(checkbreakdowns);
+            string breakdowns = con.ReadString(checkbreakdowns);
             return breakdowns;
         }
         public string checkDaysworked(string _month, int cur_year)
@@ -106,14 +106,14 @@ namespace DayKeeper
             int _year = Convert.ToInt32(cur_year);
             // check days worked
             string checkdaysworked = "SELECT count(Sales) FROM Records WHERE Date LIKE '%" + _month + "%' AND Date LIKE '%" + _year + "%' AND Sales > 0";
-            string daysworked = Connection.ReadString(checkdaysworked);
+            string daysworked = con.ReadString(checkdaysworked);
             return daysworked;
         }
         public string checkDaysoff(string _month, int cur_year)
         {
             int _year = Convert.ToInt32(cur_year);
             string checkdaysoff = "SELECT count(Crew) FROM Records WHERE Date LIKE '%" + _month + "%' AND Date LIKE '%" + _year + "%' AND Crew LIKE '%Off%'";
-            string daysoff = Connection.ReadString(checkdaysoff);
+            string daysoff = con.ReadString(checkdaysoff);
             return daysoff;
         }
         private void month_cmb_SelectedIndexChanged(object sender, EventArgs e)

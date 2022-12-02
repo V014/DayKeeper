@@ -31,18 +31,17 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Records));
             this.records_panel = new System.Windows.Forms.Panel();
             this.data_records = new System.Windows.Forms.DataGridView();
+            this.panel_inputs = new System.Windows.Forms.Panel();
             this.btn_cancel = new System.Windows.Forms.Button();
             this.btn_apply = new System.Windows.Forms.Button();
-            this.panel_inputs = new System.Windows.Forms.Panel();
-            this.txt_sales = new System.Windows.Forms.TextBox();
-            this.txt_fuel = new System.Windows.Forms.TextBox();
-            this.txt_crew = new System.Windows.Forms.TextBox();
-            this.txt_mileage = new System.Windows.Forms.TextBox();
-            this.insertDatePicker = new Bunifu.UI.WinForms.BunifuDatePicker();
-            this.notes_txt = new System.Windows.Forms.RichTextBox();
+            this.txt_mileage = new MetroFramework.Controls.MetroTextBox();
+            this.txt_crew = new MetroFramework.Controls.MetroTextBox();
+            this.txt_fuel = new MetroFramework.Controls.MetroTextBox();
+            this.txt_income = new MetroFramework.Controls.MetroTextBox();
+            this.date_input = new MetroFramework.Controls.MetroDateTime();
+            this.txt_notes = new MetroFramework.Controls.MetroTextBox();
             this.records_panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.data_records)).BeginInit();
             this.panel_inputs.SuspendLayout();
@@ -50,12 +49,13 @@
             // 
             // records_panel
             // 
+            this.records_panel.BackColor = System.Drawing.Color.Transparent;
             this.records_panel.Controls.Add(this.data_records);
             this.records_panel.Controls.Add(this.panel_inputs);
             this.records_panel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.records_panel.Location = new System.Drawing.Point(0, 0);
             this.records_panel.Name = "records_panel";
-            this.records_panel.Padding = new System.Windows.Forms.Padding(10);
+            this.records_panel.Padding = new System.Windows.Forms.Padding(5);
             this.records_panel.Size = new System.Drawing.Size(944, 514);
             this.records_panel.TabIndex = 0;
             // 
@@ -63,9 +63,10 @@
             // 
             this.data_records.AllowUserToAddRows = false;
             this.data_records.AllowUserToDeleteRows = false;
+            this.data_records.AllowUserToResizeColumns = false;
             this.data_records.AllowUserToResizeRows = false;
             this.data_records.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
-            this.data_records.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.data_records.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(39)))));
             this.data_records.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.data_records.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.data_records.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -89,7 +90,7 @@
             this.data_records.DefaultCellStyle = dataGridViewCellStyle2;
             this.data_records.Dock = System.Windows.Forms.DockStyle.Fill;
             this.data_records.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.data_records.Location = new System.Drawing.Point(229, 10);
+            this.data_records.Location = new System.Drawing.Point(218, 5);
             this.data_records.Name = "data_records";
             this.data_records.ReadOnly = true;
             this.data_records.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -104,8 +105,25 @@
             this.data_records.RowHeadersVisible = false;
             this.data_records.RowTemplate.Height = 50;
             this.data_records.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.data_records.Size = new System.Drawing.Size(705, 494);
+            this.data_records.Size = new System.Drawing.Size(721, 504);
             this.data_records.TabIndex = 0;
+            // 
+            // panel_inputs
+            // 
+            this.panel_inputs.BackColor = System.Drawing.Color.Transparent;
+            this.panel_inputs.Controls.Add(this.date_input);
+            this.panel_inputs.Controls.Add(this.txt_notes);
+            this.panel_inputs.Controls.Add(this.txt_income);
+            this.panel_inputs.Controls.Add(this.txt_fuel);
+            this.panel_inputs.Controls.Add(this.txt_crew);
+            this.panel_inputs.Controls.Add(this.txt_mileage);
+            this.panel_inputs.Controls.Add(this.btn_cancel);
+            this.panel_inputs.Controls.Add(this.btn_apply);
+            this.panel_inputs.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel_inputs.Location = new System.Drawing.Point(5, 5);
+            this.panel_inputs.Name = "panel_inputs";
+            this.panel_inputs.Size = new System.Drawing.Size(213, 504);
+            this.panel_inputs.TabIndex = 1;
             // 
             // btn_cancel
             // 
@@ -113,10 +131,10 @@
             this.btn_cancel.FlatAppearance.BorderSize = 0;
             this.btn_cancel.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Tomato;
             this.btn_cancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_cancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_cancel.Font = new System.Drawing.Font("Roboto", 11.25F);
             this.btn_cancel.ForeColor = System.Drawing.Color.White;
             this.btn_cancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_cancel.Location = new System.Drawing.Point(100, 398);
+            this.btn_cancel.Location = new System.Drawing.Point(109, 461);
             this.btn_cancel.Name = "btn_cancel";
             this.btn_cancel.Size = new System.Drawing.Size(90, 30);
             this.btn_cancel.TabIndex = 3;
@@ -130,135 +148,251 @@
             this.btn_apply.FlatAppearance.BorderSize = 0;
             this.btn_apply.FlatAppearance.MouseOverBackColor = System.Drawing.Color.PaleGreen;
             this.btn_apply.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_apply.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_apply.Font = new System.Drawing.Font("Roboto", 11.25F);
             this.btn_apply.ForeColor = System.Drawing.Color.White;
             this.btn_apply.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_apply.Location = new System.Drawing.Point(6, 398);
+            this.btn_apply.Location = new System.Drawing.Point(12, 461);
             this.btn_apply.Name = "btn_apply";
             this.btn_apply.Size = new System.Drawing.Size(90, 30);
             this.btn_apply.TabIndex = 3;
             this.btn_apply.Text = "Apply";
             this.btn_apply.UseVisualStyleBackColor = false;
-            this.btn_apply.Click += new System.EventHandler(this.btn_insert_Click);
-            // 
-            // panel_inputs
-            // 
-            this.panel_inputs.BackColor = System.Drawing.Color.Transparent;
-            this.panel_inputs.Controls.Add(this.btn_cancel);
-            this.panel_inputs.Controls.Add(this.notes_txt);
-            this.panel_inputs.Controls.Add(this.btn_apply);
-            this.panel_inputs.Controls.Add(this.insertDatePicker);
-            this.panel_inputs.Controls.Add(this.txt_sales);
-            this.panel_inputs.Controls.Add(this.txt_fuel);
-            this.panel_inputs.Controls.Add(this.txt_crew);
-            this.panel_inputs.Controls.Add(this.txt_mileage);
-            this.panel_inputs.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel_inputs.Location = new System.Drawing.Point(10, 10);
-            this.panel_inputs.Name = "panel_inputs";
-            this.panel_inputs.Size = new System.Drawing.Size(219, 494);
-            this.panel_inputs.TabIndex = 1;
-            // 
-            // txt_sales
-            // 
-            this.txt_sales.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.txt_sales.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txt_sales.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_sales.ForeColor = System.Drawing.Color.Silver;
-            this.txt_sales.Location = new System.Drawing.Point(3, 134);
-            this.txt_sales.Multiline = true;
-            this.txt_sales.Name = "txt_sales";
-            this.txt_sales.Size = new System.Drawing.Size(187, 24);
-            this.txt_sales.TabIndex = 3;
-            this.txt_sales.Text = "Income";
-            // 
-            // txt_fuel
-            // 
-            this.txt_fuel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.txt_fuel.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txt_fuel.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_fuel.ForeColor = System.Drawing.Color.Silver;
-            this.txt_fuel.Location = new System.Drawing.Point(3, 91);
-            this.txt_fuel.Multiline = true;
-            this.txt_fuel.Name = "txt_fuel";
-            this.txt_fuel.Size = new System.Drawing.Size(187, 24);
-            this.txt_fuel.TabIndex = 2;
-            this.txt_fuel.Text = "Fuel";
-            // 
-            // txt_crew
-            // 
-            this.txt_crew.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.txt_crew.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txt_crew.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_crew.ForeColor = System.Drawing.Color.Silver;
-            this.txt_crew.Location = new System.Drawing.Point(3, 46);
-            this.txt_crew.Multiline = true;
-            this.txt_crew.Name = "txt_crew";
-            this.txt_crew.Size = new System.Drawing.Size(187, 24);
-            this.txt_crew.TabIndex = 1;
-            this.txt_crew.Text = "Crew";
+            this.btn_apply.Click += new System.EventHandler(this.Btn_apply_Click);
             // 
             // txt_mileage
             // 
             this.txt_mileage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.txt_mileage.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txt_mileage.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_mileage.ForeColor = System.Drawing.Color.Silver;
-            this.txt_mileage.Location = new System.Drawing.Point(3, 4);
-            this.txt_mileage.Multiline = true;
+            // 
+            // 
+            // 
+            this.txt_mileage.CustomButton.BackColor = System.Drawing.SystemColors.Control;
+            this.txt_mileage.CustomButton.FlatAppearance.BorderSize = 0;
+            this.txt_mileage.CustomButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.txt_mileage.CustomButton.Image = null;
+            this.txt_mileage.CustomButton.Location = new System.Drawing.Point(165, 1);
+            this.txt_mileage.CustomButton.Name = "";
+            this.txt_mileage.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.txt_mileage.CustomButton.Style = MetroFramework.MetroColorStyle.Green;
+            this.txt_mileage.CustomButton.TabIndex = 1;
+            this.txt_mileage.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txt_mileage.CustomButton.UseSelectable = true;
+            this.txt_mileage.CustomButton.UseVisualStyleBackColor = false;
+            this.txt_mileage.CustomButton.Visible = false;
+            this.txt_mileage.FontSize = MetroFramework.MetroTextBoxSize.Medium;
+            this.txt_mileage.ForeColor = System.Drawing.Color.Gray;
+            this.txt_mileage.Lines = new string[0];
+            this.txt_mileage.Location = new System.Drawing.Point(12, 6);
+            this.txt_mileage.MaxLength = 32767;
             this.txt_mileage.Name = "txt_mileage";
-            this.txt_mileage.Size = new System.Drawing.Size(187, 24);
-            this.txt_mileage.TabIndex = 0;
-            this.txt_mileage.Text = "Mileage";
+            this.txt_mileage.PasswordChar = '\0';
+            this.txt_mileage.PromptText = "Mileage";
+            this.txt_mileage.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txt_mileage.SelectedText = "";
+            this.txt_mileage.SelectionLength = 0;
+            this.txt_mileage.SelectionStart = 0;
+            this.txt_mileage.ShortcutsEnabled = true;
+            this.txt_mileage.ShowClearButton = true;
+            this.txt_mileage.Size = new System.Drawing.Size(187, 23);
+            this.txt_mileage.Style = MetroFramework.MetroColorStyle.Green;
+            this.txt_mileage.TabIndex = 24;
+            this.txt_mileage.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.txt_mileage.UseSelectable = true;
+            this.txt_mileage.WaterMark = "Mileage";
+            this.txt_mileage.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txt_mileage.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
-            // insertDatePicker
+            // txt_crew
             // 
-            this.insertDatePicker.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.insertDatePicker.BorderRadius = 1;
-            this.insertDatePicker.Color = System.Drawing.Color.PaleGreen;
-            this.insertDatePicker.CustomFormat = "";
-            this.insertDatePicker.DateBorderThickness = Bunifu.UI.WinForms.BunifuDatePicker.BorderThickness.Thin;
-            this.insertDatePicker.DateTextAlign = Bunifu.UI.WinForms.BunifuDatePicker.TextAlign.Left;
-            this.insertDatePicker.DisabledColor = System.Drawing.Color.Gray;
-            this.insertDatePicker.DisplayWeekNumbers = false;
-            this.insertDatePicker.DPHeight = 0;
-            this.insertDatePicker.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
-            this.insertDatePicker.FillDatePicker = false;
-            this.insertDatePicker.Font = new System.Drawing.Font("Roboto", 9F);
-            this.insertDatePicker.ForeColor = System.Drawing.Color.Gray;
-            this.insertDatePicker.Icon = ((System.Drawing.Image)(resources.GetObject("insertDatePicker.Icon")));
-            this.insertDatePicker.IconColor = System.Drawing.Color.Gray;
-            this.insertDatePicker.IconLocation = Bunifu.UI.WinForms.BunifuDatePicker.Indicator.Right;
-            this.insertDatePicker.LeftTextMargin = 5;
-            this.insertDatePicker.Location = new System.Drawing.Point(3, 175);
-            this.insertDatePicker.MinimumSize = new System.Drawing.Size(4, 32);
-            this.insertDatePicker.Name = "insertDatePicker";
-            this.insertDatePicker.Size = new System.Drawing.Size(187, 32);
-            this.insertDatePicker.TabIndex = 22;
+            this.txt_crew.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             // 
-            // notes_txt
             // 
-            this.notes_txt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.notes_txt.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.notes_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.notes_txt.ForeColor = System.Drawing.Color.White;
-            this.notes_txt.Location = new System.Drawing.Point(3, 225);
-            this.notes_txt.Name = "notes_txt";
-            this.notes_txt.Size = new System.Drawing.Size(187, 167);
-            this.notes_txt.TabIndex = 23;
-            this.notes_txt.Text = "";
+            // 
+            this.txt_crew.CustomButton.BackColor = System.Drawing.SystemColors.Control;
+            this.txt_crew.CustomButton.FlatAppearance.BorderSize = 0;
+            this.txt_crew.CustomButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.txt_crew.CustomButton.Image = null;
+            this.txt_crew.CustomButton.Location = new System.Drawing.Point(165, 1);
+            this.txt_crew.CustomButton.Name = "";
+            this.txt_crew.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.txt_crew.CustomButton.Style = MetroFramework.MetroColorStyle.Green;
+            this.txt_crew.CustomButton.TabIndex = 1;
+            this.txt_crew.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txt_crew.CustomButton.UseSelectable = true;
+            this.txt_crew.CustomButton.UseVisualStyleBackColor = false;
+            this.txt_crew.CustomButton.Visible = false;
+            this.txt_crew.FontSize = MetroFramework.MetroTextBoxSize.Medium;
+            this.txt_crew.ForeColor = System.Drawing.Color.Gray;
+            this.txt_crew.Lines = new string[0];
+            this.txt_crew.Location = new System.Drawing.Point(12, 35);
+            this.txt_crew.MaxLength = 32767;
+            this.txt_crew.Name = "txt_crew";
+            this.txt_crew.PasswordChar = '\0';
+            this.txt_crew.PromptText = "Crew";
+            this.txt_crew.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txt_crew.SelectedText = "";
+            this.txt_crew.SelectionLength = 0;
+            this.txt_crew.SelectionStart = 0;
+            this.txt_crew.ShortcutsEnabled = true;
+            this.txt_crew.ShowClearButton = true;
+            this.txt_crew.Size = new System.Drawing.Size(187, 23);
+            this.txt_crew.Style = MetroFramework.MetroColorStyle.Green;
+            this.txt_crew.TabIndex = 24;
+            this.txt_crew.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.txt_crew.UseSelectable = true;
+            this.txt_crew.WaterMark = "Crew";
+            this.txt_crew.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txt_crew.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // txt_fuel
+            // 
+            this.txt_fuel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            // 
+            // 
+            // 
+            this.txt_fuel.CustomButton.BackColor = System.Drawing.SystemColors.Control;
+            this.txt_fuel.CustomButton.FlatAppearance.BorderSize = 0;
+            this.txt_fuel.CustomButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.txt_fuel.CustomButton.Image = null;
+            this.txt_fuel.CustomButton.Location = new System.Drawing.Point(165, 1);
+            this.txt_fuel.CustomButton.Name = "";
+            this.txt_fuel.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.txt_fuel.CustomButton.Style = MetroFramework.MetroColorStyle.Green;
+            this.txt_fuel.CustomButton.TabIndex = 1;
+            this.txt_fuel.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txt_fuel.CustomButton.UseSelectable = true;
+            this.txt_fuel.CustomButton.UseVisualStyleBackColor = false;
+            this.txt_fuel.CustomButton.Visible = false;
+            this.txt_fuel.FontSize = MetroFramework.MetroTextBoxSize.Medium;
+            this.txt_fuel.ForeColor = System.Drawing.Color.Gray;
+            this.txt_fuel.Lines = new string[0];
+            this.txt_fuel.Location = new System.Drawing.Point(12, 64);
+            this.txt_fuel.MaxLength = 32767;
+            this.txt_fuel.Name = "txt_fuel";
+            this.txt_fuel.PasswordChar = '\0';
+            this.txt_fuel.PromptText = "Fuel";
+            this.txt_fuel.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txt_fuel.SelectedText = "";
+            this.txt_fuel.SelectionLength = 0;
+            this.txt_fuel.SelectionStart = 0;
+            this.txt_fuel.ShortcutsEnabled = true;
+            this.txt_fuel.ShowClearButton = true;
+            this.txt_fuel.Size = new System.Drawing.Size(187, 23);
+            this.txt_fuel.Style = MetroFramework.MetroColorStyle.Green;
+            this.txt_fuel.TabIndex = 24;
+            this.txt_fuel.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.txt_fuel.UseSelectable = true;
+            this.txt_fuel.WaterMark = "Fuel";
+            this.txt_fuel.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txt_fuel.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // txt_income
+            // 
+            this.txt_income.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            // 
+            // 
+            // 
+            this.txt_income.CustomButton.BackColor = System.Drawing.SystemColors.Control;
+            this.txt_income.CustomButton.FlatAppearance.BorderSize = 0;
+            this.txt_income.CustomButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.txt_income.CustomButton.Image = null;
+            this.txt_income.CustomButton.Location = new System.Drawing.Point(165, 1);
+            this.txt_income.CustomButton.Name = "";
+            this.txt_income.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.txt_income.CustomButton.Style = MetroFramework.MetroColorStyle.Green;
+            this.txt_income.CustomButton.TabIndex = 1;
+            this.txt_income.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txt_income.CustomButton.UseSelectable = true;
+            this.txt_income.CustomButton.UseVisualStyleBackColor = false;
+            this.txt_income.CustomButton.Visible = false;
+            this.txt_income.FontSize = MetroFramework.MetroTextBoxSize.Medium;
+            this.txt_income.ForeColor = System.Drawing.Color.Gray;
+            this.txt_income.Lines = new string[0];
+            this.txt_income.Location = new System.Drawing.Point(12, 93);
+            this.txt_income.MaxLength = 32767;
+            this.txt_income.Name = "txt_income";
+            this.txt_income.PasswordChar = '\0';
+            this.txt_income.PromptText = "Income";
+            this.txt_income.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txt_income.SelectedText = "";
+            this.txt_income.SelectionLength = 0;
+            this.txt_income.SelectionStart = 0;
+            this.txt_income.ShortcutsEnabled = true;
+            this.txt_income.ShowClearButton = true;
+            this.txt_income.Size = new System.Drawing.Size(187, 23);
+            this.txt_income.Style = MetroFramework.MetroColorStyle.Green;
+            this.txt_income.TabIndex = 24;
+            this.txt_income.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.txt_income.UseSelectable = true;
+            this.txt_income.WaterMark = "Income";
+            this.txt_income.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txt_income.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // date_input
+            // 
+            this.date_input.CalendarMonthBackground = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.date_input.FontSize = MetroFramework.MetroDateTimeSize.Small;
+            this.date_input.Location = new System.Drawing.Point(12, 122);
+            this.date_input.MinimumSize = new System.Drawing.Size(0, 25);
+            this.date_input.Name = "date_input";
+            this.date_input.Size = new System.Drawing.Size(187, 25);
+            this.date_input.Style = MetroFramework.MetroColorStyle.Green;
+            this.date_input.TabIndex = 25;
+            this.date_input.Theme = MetroFramework.MetroThemeStyle.Dark;
+            // 
+            // txt_notes
+            // 
+            this.txt_notes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            // 
+            // 
+            // 
+            this.txt_notes.CustomButton.BackColor = System.Drawing.SystemColors.Control;
+            this.txt_notes.CustomButton.FlatAppearance.BorderSize = 0;
+            this.txt_notes.CustomButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.txt_notes.CustomButton.Image = null;
+            this.txt_notes.CustomButton.Location = new System.Drawing.Point(49, 1);
+            this.txt_notes.CustomButton.Name = "";
+            this.txt_notes.CustomButton.Size = new System.Drawing.Size(137, 137);
+            this.txt_notes.CustomButton.Style = MetroFramework.MetroColorStyle.Green;
+            this.txt_notes.CustomButton.TabIndex = 1;
+            this.txt_notes.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txt_notes.CustomButton.UseSelectable = true;
+            this.txt_notes.CustomButton.UseVisualStyleBackColor = false;
+            this.txt_notes.CustomButton.Visible = false;
+            this.txt_notes.FontSize = MetroFramework.MetroTextBoxSize.Medium;
+            this.txt_notes.ForeColor = System.Drawing.Color.Gray;
+            this.txt_notes.Lines = new string[0];
+            this.txt_notes.Location = new System.Drawing.Point(12, 153);
+            this.txt_notes.MaxLength = 32767;
+            this.txt_notes.Multiline = true;
+            this.txt_notes.Name = "txt_notes";
+            this.txt_notes.PasswordChar = '\0';
+            this.txt_notes.PromptText = "Income";
+            this.txt_notes.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txt_notes.SelectedText = "";
+            this.txt_notes.SelectionLength = 0;
+            this.txt_notes.SelectionStart = 0;
+            this.txt_notes.ShortcutsEnabled = true;
+            this.txt_notes.ShowClearButton = true;
+            this.txt_notes.Size = new System.Drawing.Size(187, 139);
+            this.txt_notes.Style = MetroFramework.MetroColorStyle.Green;
+            this.txt_notes.TabIndex = 24;
+            this.txt_notes.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.txt_notes.UseSelectable = true;
+            this.txt_notes.WaterMark = "Income";
+            this.txt_notes.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txt_notes.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
             // Records
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(39)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             this.Controls.Add(this.records_panel);
             this.Name = "Records";
             this.Size = new System.Drawing.Size(944, 514);
             this.records_panel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.data_records)).EndInit();
             this.panel_inputs.ResumeLayout(false);
-            this.panel_inputs.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -269,12 +403,12 @@
         private System.Windows.Forms.Button btn_cancel;
         private System.Windows.Forms.Button btn_apply;
         private System.Windows.Forms.Panel panel_inputs;
-        private System.Windows.Forms.TextBox txt_sales;
-        private System.Windows.Forms.TextBox txt_fuel;
-        private System.Windows.Forms.TextBox txt_crew;
-        private System.Windows.Forms.TextBox txt_mileage;
-        private Bunifu.UI.WinForms.BunifuDatePicker insertDatePicker;
-        private System.Windows.Forms.RichTextBox notes_txt;
         private System.Windows.Forms.DataGridView data_records;
+        private MetroFramework.Controls.MetroTextBox txt_mileage;
+        private MetroFramework.Controls.MetroDateTime date_input;
+        private MetroFramework.Controls.MetroTextBox txt_income;
+        private MetroFramework.Controls.MetroTextBox txt_fuel;
+        private MetroFramework.Controls.MetroTextBox txt_crew;
+        private MetroFramework.Controls.MetroTextBox txt_notes;
     }
 }

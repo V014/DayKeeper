@@ -8,6 +8,7 @@ namespace DayKeeper
 {
     public partial class Insert : Form
     {
+        Connection con = new Connection();
         public Insert()
         {
             InitializeComponent();
@@ -48,13 +49,13 @@ namespace DayKeeper
         {
             string date = insertDatePicker.Text;
             string queryEntry = "SELECT id FROM Records where Date = '" + date + "'";
-            string result = Connection.ReadString(queryEntry);
+            string result = con.ReadString(queryEntry);
             if (result != "")
             {
                 try
                 {
                     string queryInsert = "UPDATE Records SET MileageOld = '" + milout_txt.Text + "', MileageNew = '" + milin_txt.Text + "', Crew = '" + crew_txt.Text + "', Fuel = '" + fuel_txt.Text + "', Sales = '" + sales_txt.Text + "', Losses = '" + losses_txt.Text + "', Notes = '" + notes_txt.Text + "' WHERE id = '" + result + "'";
-                    Connection.ExecuteQuery(queryInsert);
+                    con.ExecuteQuery(queryInsert);
                     SoundPlayer save = new SoundPlayer(@"click.wav");
                     save.Play();
                     lbl_title.Text = "Record Updated!";
@@ -71,7 +72,7 @@ namespace DayKeeper
                 try
                 {
                     string queryInsert = "INSERT INTO Records (Date, MileageOld, MileageNew, Crew, Fuel, Sales, Losses, Notes) VALUES ('" + date + "', '" + milin_txt.Text + "', '" + milout_txt.Text + "', '" + crew_txt.Text + "', '" + fuel_txt.Text + "', '" + sales_txt.Text + "', '" + losses_txt.Text + "', '" + notes_txt.Text + "')";
-                    Connection.ExecuteQuery(queryInsert);
+                    con.ExecuteQuery(queryInsert);
                     SoundPlayer save = new SoundPlayer(@"click.wav");
                     save.Play();
                     lbl_title.Text = "Record Saved!";

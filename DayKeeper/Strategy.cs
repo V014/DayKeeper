@@ -10,6 +10,7 @@ namespace DayKeeper
     {
         CheckSales checksales = new CheckSales();
         CheckLosses checklosses = new CheckLosses();
+        Connection con = new Connection();
         // check current month and year
         private static int monthNumber = DateTime.Now.Month;
         private static int year = DateTime.Now.Year;
@@ -97,7 +98,7 @@ namespace DayKeeper
             string date = DateTime.Now.ToString("f");
             // update records
             string cmd = "UPDATE Strategy SET DailyTarget = '" + daily +"', MonthlyTarget = '" + monthly + "', AnnualTarget = '" + annual + "', Investment = '" + investment +"', Offset = '" + offset +"', Date = '" + date + "' WHERE id = 1";
-            Connection.ExecuteQuery(cmd);
+            con.ExecuteQuery(cmd);
             SoundPlayer save = new SoundPlayer(@"click.wav");
             save.Play();
             save_btn.Text = "Saved!";

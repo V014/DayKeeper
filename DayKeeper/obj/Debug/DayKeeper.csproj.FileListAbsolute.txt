@@ -55,3 +55,4 @@ C:\Users\Wanga Kanjala\source\repos\DayKeeper\DayKeeper\bin\Debug\Bunifu.UI.WinF
 C:\Users\Wanga Kanjala\source\repos\DayKeeper\DayKeeper\bin\Debug\Bunifu.UI.WinForms.BunifuDatePicker.xml
 C:\Users\Wanga Kanjala\source\repos\DayKeeper\DayKeeper\obj\Debug\DayKeeper.csproj.CoreCompileInputs.cache
 C:\Users\Wanga Kanjala\source\repos\DayKeeper\DayKeeper\obj\Debug\DayKeeper.csproj.CopyComplete
+C:\Users\Wanga Kanjala\source\repos\DayKeeper\DayKeeper\bin\Debug\MetroFramework.dll

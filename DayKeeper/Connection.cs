@@ -17,7 +17,7 @@ namespace DayKeeper
         }
 
         // execute query function
-        public static void ExecuteQuery(string txtQuery)
+        public void ExecuteQuery(string txtQuery)
         {
             setConnection();
             con.Open();
@@ -34,7 +34,7 @@ namespace DayKeeper
             return con;
         }
 
-        public static string ReadString(string txtQuery)
+        public string ReadString(string txtQuery)
         {
             using(SQLiteConnection con = GetConnection())
             using (SQLiteCommand cmd = new SQLiteCommand(txtQuery, con))
@@ -43,6 +43,7 @@ namespace DayKeeper
                 return (result == null ? "" : result.ToString());
             }
         }
+
         // pulls data from a table and fills it into a specified datagrid
         public void LoadData(string query, DataGridView dataGrid)
         {

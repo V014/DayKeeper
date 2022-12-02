@@ -13,24 +13,24 @@ namespace DayKeeper
             dataGrid.CellBorderStyle = DataGridViewCellBorderStyle.None;
             dataGrid.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
             dataGrid.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dataGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             dataGrid.RowHeadersVisible = false;
             dataGrid.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
-            dataGrid.BackgroundColor = Color.FromArgb(17, 17, 17);
+            //dataGrid.BackgroundColor = Color.FromArgb(17, 17, 17);
+            dataGrid.RowsDefaultCellStyle.BackColor = Color.FromArgb(17, 17, 17);
+            dataGrid.RowHeadersDefaultCellStyle.BackColor = Color.FromArgb(17, 17, 17);
+            dataGrid.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(17,17,17);
             dataGrid.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(17, 17, 17);
+
+            dataGrid.RowsDefaultCellStyle.ForeColor = Color.White;
+            dataGrid.DefaultCellStyle.SelectionForeColor = Color.WhiteSmoke;
+            dataGrid.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
             dataGrid.AlternatingRowsDefaultCellStyle.ForeColor = Color.White;
 
-            dataGrid.RowsDefaultCellStyle.BackColor = Color.FromArgb(17, 17, 17);
-            dataGrid.RowsDefaultCellStyle.ForeColor = Color.White;
-            dataGrid.RowHeadersDefaultCellStyle.BackColor = Color.FromArgb(17, 17, 17);
-
-            dataGrid.DefaultCellStyle.SelectionForeColor = Color.WhiteSmoke;
-            dataGrid.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(17, 17, 17);
-            dataGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             dataGrid.ColumnHeadersHeight = 30;
-            dataGrid.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
-
+            
             dataGrid.ColumnHeadersDefaultCellStyle.Font = new Font("Roboto", 11);
             dataGrid.DefaultCellStyle.Font = new Font("Roboto", 8);
             dataGrid.AlternatingRowsDefaultCellStyle.Font = new Font("Roboto", 8);
