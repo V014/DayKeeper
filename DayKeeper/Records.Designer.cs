@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -42,9 +43,13 @@
             this.txt_income = new MetroFramework.Controls.MetroTextBox();
             this.date_input = new MetroFramework.Controls.MetroDateTime();
             this.txt_notes = new MetroFramework.Controls.MetroTextBox();
+            this.lbl_records = new System.Windows.Forms.Label();
+            this.context_records = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.removeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.records_panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.data_records)).BeginInit();
             this.panel_inputs.SuspendLayout();
+            this.context_records.SuspendLayout();
             this.SuspendLayout();
             // 
             // records_panel
@@ -66,7 +71,7 @@
             this.data_records.AllowUserToResizeColumns = false;
             this.data_records.AllowUserToResizeRows = false;
             this.data_records.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
-            this.data_records.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(39)))));
+            this.data_records.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             this.data_records.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.data_records.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.data_records.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -80,6 +85,7 @@
             this.data_records.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.data_records.ColumnHeadersHeight = 30;
             this.data_records.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.data_records.ContextMenuStrip = this.context_records;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.SeaGreen;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
@@ -111,6 +117,7 @@
             // panel_inputs
             // 
             this.panel_inputs.BackColor = System.Drawing.Color.Transparent;
+            this.panel_inputs.Controls.Add(this.lbl_records);
             this.panel_inputs.Controls.Add(this.date_input);
             this.panel_inputs.Controls.Add(this.txt_notes);
             this.panel_inputs.Controls.Add(this.txt_income);
@@ -134,13 +141,13 @@
             this.btn_cancel.Font = new System.Drawing.Font("Roboto", 11.25F);
             this.btn_cancel.ForeColor = System.Drawing.Color.White;
             this.btn_cancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_cancel.Location = new System.Drawing.Point(109, 461);
+            this.btn_cancel.Location = new System.Drawing.Point(106, 336);
             this.btn_cancel.Name = "btn_cancel";
             this.btn_cancel.Size = new System.Drawing.Size(90, 30);
             this.btn_cancel.TabIndex = 3;
             this.btn_cancel.Text = "Cancel";
             this.btn_cancel.UseVisualStyleBackColor = false;
-            this.btn_cancel.Click += new System.EventHandler(this.delete_btn_Click);
+            this.btn_cancel.Click += new System.EventHandler(this.Btn_cancel_Click);
             // 
             // btn_apply
             // 
@@ -151,7 +158,7 @@
             this.btn_apply.Font = new System.Drawing.Font("Roboto", 11.25F);
             this.btn_apply.ForeColor = System.Drawing.Color.White;
             this.btn_apply.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_apply.Location = new System.Drawing.Point(12, 461);
+            this.btn_apply.Location = new System.Drawing.Point(9, 336);
             this.btn_apply.Name = "btn_apply";
             this.btn_apply.Size = new System.Drawing.Size(90, 30);
             this.btn_apply.TabIndex = 3;
@@ -181,7 +188,7 @@
             this.txt_mileage.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.txt_mileage.ForeColor = System.Drawing.Color.Gray;
             this.txt_mileage.Lines = new string[0];
-            this.txt_mileage.Location = new System.Drawing.Point(12, 6);
+            this.txt_mileage.Location = new System.Drawing.Point(9, 44);
             this.txt_mileage.MaxLength = 32767;
             this.txt_mileage.Name = "txt_mileage";
             this.txt_mileage.PasswordChar = '\0';
@@ -223,7 +230,7 @@
             this.txt_crew.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.txt_crew.ForeColor = System.Drawing.Color.Gray;
             this.txt_crew.Lines = new string[0];
-            this.txt_crew.Location = new System.Drawing.Point(12, 35);
+            this.txt_crew.Location = new System.Drawing.Point(9, 73);
             this.txt_crew.MaxLength = 32767;
             this.txt_crew.Name = "txt_crew";
             this.txt_crew.PasswordChar = '\0';
@@ -265,7 +272,7 @@
             this.txt_fuel.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.txt_fuel.ForeColor = System.Drawing.Color.Gray;
             this.txt_fuel.Lines = new string[0];
-            this.txt_fuel.Location = new System.Drawing.Point(12, 64);
+            this.txt_fuel.Location = new System.Drawing.Point(9, 102);
             this.txt_fuel.MaxLength = 32767;
             this.txt_fuel.Name = "txt_fuel";
             this.txt_fuel.PasswordChar = '\0';
@@ -307,7 +314,7 @@
             this.txt_income.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.txt_income.ForeColor = System.Drawing.Color.Gray;
             this.txt_income.Lines = new string[0];
-            this.txt_income.Location = new System.Drawing.Point(12, 93);
+            this.txt_income.Location = new System.Drawing.Point(9, 131);
             this.txt_income.MaxLength = 32767;
             this.txt_income.Name = "txt_income";
             this.txt_income.PasswordChar = '\0';
@@ -331,7 +338,7 @@
             // 
             this.date_input.CalendarMonthBackground = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.date_input.FontSize = MetroFramework.MetroDateTimeSize.Small;
-            this.date_input.Location = new System.Drawing.Point(12, 122);
+            this.date_input.Location = new System.Drawing.Point(9, 160);
             this.date_input.MinimumSize = new System.Drawing.Size(0, 25);
             this.date_input.Name = "date_input";
             this.date_input.Size = new System.Drawing.Size(187, 25);
@@ -361,12 +368,12 @@
             this.txt_notes.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.txt_notes.ForeColor = System.Drawing.Color.Gray;
             this.txt_notes.Lines = new string[0];
-            this.txt_notes.Location = new System.Drawing.Point(12, 153);
+            this.txt_notes.Location = new System.Drawing.Point(9, 191);
             this.txt_notes.MaxLength = 32767;
             this.txt_notes.Multiline = true;
             this.txt_notes.Name = "txt_notes";
             this.txt_notes.PasswordChar = '\0';
-            this.txt_notes.PromptText = "Income";
+            this.txt_notes.PromptText = "Notes";
             this.txt_notes.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txt_notes.SelectedText = "";
             this.txt_notes.SelectionLength = 0;
@@ -378,9 +385,34 @@
             this.txt_notes.TabIndex = 24;
             this.txt_notes.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.txt_notes.UseSelectable = true;
-            this.txt_notes.WaterMark = "Income";
+            this.txt_notes.WaterMark = "Notes";
             this.txt_notes.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txt_notes.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // lbl_records
+            // 
+            this.lbl_records.AutoSize = true;
+            this.lbl_records.Font = new System.Drawing.Font("Roboto", 16F);
+            this.lbl_records.ForeColor = System.Drawing.Color.Gray;
+            this.lbl_records.Location = new System.Drawing.Point(4, 12);
+            this.lbl_records.Name = "lbl_records";
+            this.lbl_records.Size = new System.Drawing.Size(129, 27);
+            this.lbl_records.TabIndex = 26;
+            this.lbl_records.Text = "Add records";
+            // 
+            // context_records
+            // 
+            this.context_records.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.removeToolStripMenuItem});
+            this.context_records.Name = "context_records";
+            this.context_records.Size = new System.Drawing.Size(118, 26);
+            // 
+            // removeToolStripMenuItem
+            // 
+            this.removeToolStripMenuItem.Name = "removeToolStripMenuItem";
+            this.removeToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
+            this.removeToolStripMenuItem.Text = "Remove";
+            this.removeToolStripMenuItem.Click += new System.EventHandler(this.RemoveToolStripMenuItem_Click);
             // 
             // Records
             // 
@@ -393,6 +425,8 @@
             this.records_panel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.data_records)).EndInit();
             this.panel_inputs.ResumeLayout(false);
+            this.panel_inputs.PerformLayout();
+            this.context_records.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -410,5 +444,8 @@
         private MetroFramework.Controls.MetroTextBox txt_fuel;
         private MetroFramework.Controls.MetroTextBox txt_crew;
         private MetroFramework.Controls.MetroTextBox txt_notes;
+        private System.Windows.Forms.Label lbl_records;
+        private System.Windows.Forms.ContextMenuStrip context_records;
+        private System.Windows.Forms.ToolStripMenuItem removeToolStripMenuItem;
     }
 }

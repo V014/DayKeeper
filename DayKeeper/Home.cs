@@ -17,7 +17,7 @@ namespace DayKeeper
             InitializeComponent();
             loadHome();
             string date = DateTime.Now.ToString("f");
-            con.ExecuteQuery("UPDATE Session SET Date = '" + date + "' WHERE id = 1");
+            con.ExecuteQuery($"UPDATE Session SET Date = '{date}' WHERE id = 1");
         }
         void loadHome()
         {
@@ -28,18 +28,7 @@ namespace DayKeeper
             welcome.AutoSize = true;
             welcome.Show();
         }
-        //loads data into a data grid
-        public void LoadData(string query, DataGridView dataGrid)
-        {
-            var con = Connection.GetConnection();
-            var DB = new SQLiteDataAdapter(query, con);
-            var DS = new DataSet();
-            var DT = new DataTable();
-            DB.Fill(DS);
-            DT = DS.Tables[0];
-            dataGrid.DataSource = DT;
-            con.Close();
-        }
+        // calls homepage
         private void home_btn_Click(object sender, EventArgs e)
         {
             loadHome();

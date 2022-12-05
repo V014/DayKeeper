@@ -18,29 +18,10 @@ namespace DayKeeper
         {
             con.LoadData("SELECT * FROM Records", data_records);
             data_records.Columns[0].Visible = false;
+            data_records.Columns[2].Visible = false;
+            data_records.Columns[4].Visible = false;
+            data_records.Columns[6].Visible = false;
             grid.style(data_records);
-        }
-
-        private void delete_btn_Click(object sender, EventArgs e)
-        {
-            DialogResult dialogResult = MessageBox.Show("Delete Record?", "Are you sure?", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-            if (dialogResult == DialogResult.Yes)
-            {
-                try
-                {
-                    Home home = new Home();
-                    int id = Convert.ToInt32(data_records.CurrentRow.Cells[0].Value.ToString()); // collect id from selected row
-                    string queryDelete = "DELETE FROM Records WHERE Id = '" + id + "'";
-                    con.ExecuteQuery(queryDelete);
-                    string queryRecords = "SELECT * FROM Records";
-                    home.LoadData(queryRecords, data_records);
-
-                }
-                catch (Exception)
-                {
-                    MessageBox.Show("Failed to delete", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
         }
 
         private void Btn_apply_Click(object sender, EventArgs e)
@@ -80,6 +61,34 @@ namespace DayKeeper
                 catch (Exception)
                 {
                     MessageBox.Show("Application error!", "Assistant", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void Btn_cancel_Click(object sender, EventArgs e)
+        {
+            txt_mileage.Text = "";
+            txt_crew.Text = "";
+            txt_fuel.Text = "";
+            txt_income.Text = "";
+            txt_notes.Text = "";
+        }
+
+        private void RemoveToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Delete Record?", "Are you sure?", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (dialogResult == DialogResult.Yes)
+            {
+                try
+                {
+                    // collect id from selected row
+                    int id = Convert.ToInt32(data_records.CurrentRow.Cells[0].Value.ToString()); 
+                    con.ExecuteQuery($"DELETE FROM Records WHERE Id = '{id}'");
+                    loadRecords();
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Application error", "Assistant", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
